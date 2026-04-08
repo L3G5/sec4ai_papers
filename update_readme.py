@@ -45,7 +45,7 @@ def render_day_block(frame: pd.DataFrame, *, threshold: float, limit: int, day: 
             url = str(row.url)
             lines.append(f"- [{title}]({url}) ({score:.1%})")
             if authors:
-                lines.append(f"  Authors: {authors}")
+                lines.append(f"  Authors: {authors}\n")
             if abstract:
                 lines.append(f"  {abstract}")
     return "\n".join(lines)
