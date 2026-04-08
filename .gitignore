@@ -6,3 +6,5 @@ __pycache__/
 logs/
 lods/
 artifacts/arxiv_*.parquet
+backfill_readme_from_history.py
+history_dump.parquet
