@@ -304,20 +304,21 @@ def main() -> None:
         len(dropped),
     )
 
+    messages: list[str] = []
+    intro = f"<b>{html.escape(title_prefix)}</b>"
+    messages.append(intro)
     if not high.empty:
-        messages: list[str] = []
-        intro = f"<b>{html.escape(title_prefix)}</b>"
-        messages.append(intro)
         for index, (_, row) in enumerate(high.iterrows(), start=1):
             messages.extend(telegram_post_messages(index, row))
         logger.info("Sending %s Telegram message(s) for high-score papers", len(messages))
-        for idx, message in enumerate(messages, start=1):
-            response = send_telegram_message(bot_token, chat_id, message)
-            if not response.get("ok"):
-                raise SystemExit(f"Telegram sendMessage failed: {response}")
-            logger.info("Sent Telegram message %s/%s", idx, len(messages))
     else:
         logger.info("No papers above threshold; skipping direct Telegram paper posts")
+
+    for idx, message in enumerate(messages, start=1):
+        response = send_telegram_message(bot_token, chat_id, message)
+        if not response.get("ok"):
+            raise SystemExit(f"Telegram sendMessage failed: {response}")
+        logger.info("Sent Telegram message %s/%s", idx, len(messages))
 
     telegraph_urls: list[str] = []
     if not medium.empty:
