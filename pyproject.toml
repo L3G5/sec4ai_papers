@@ -1,0 +1,15 @@
+[project]
+name = "paper-analyzer"
+version = "0.1.0"
+description = "Public daily arXiv scoring and Telegram publishing runner"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "joblib",
+    "numpy",
+    "pandas>=3.0.2",
+    "pyarrow>=23.0.1",
+    "python-dotenv>=1.2.2",
+    "scikit-learn>=1.8.0",
+    "tqdm>=4.67.3",
+]

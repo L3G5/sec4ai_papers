@@ -1,0 +1,8 @@
+.env
+.python-version
+.venv/
+__pycache__/
+*.pyc
+logs/
+lods/
+artifacts/arxiv_*.parquet

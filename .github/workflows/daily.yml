@@ -1,0 +1,64 @@
+name: Daily arXiv scoring
+
+on:
+  schedule:
+    - cron: "0 16 * * *"
+  workflow_dispatch:
+
+jobs:
+  daily:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      TELEGRAPH_ACCESS_TOKEN: ${{ secrets.TELEGRAPH_ACCESS_TOKEN }}
+      TELEGRAPH_AUTHOR_NAME: ${{ secrets.TELEGRAPH_AUTHOR_NAME }}
+      TELEGRAPH_AUTHOR_URL: ${{ secrets.TELEGRAPH_AUTHOR_URL }}
+      TELEGRAPH_SHORT_NAME: ${{ secrets.TELEGRAPH_SHORT_NAME }}
+      UPDATE_README: ${{ github.event_name == 'schedule' && '1' || '0' }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Make runner executable
+        run: chmod +x run_daily.sh
+
+      - name: Run daily pipeline
+        run: ./run_daily.sh
+
+      - name: Commit README refresh
+        if: github.event_name == 'schedule'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          if git diff --cached --quiet; then
+            echo "No README changes to commit."
+            exit 0
+          fi
+          git commit -m "Update README latest papers"
+          git push
+
+      - name: Upload run artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-arxiv-${{ github.run_number }}
+          path: |
+            artifacts/arxiv_*.parquet
+            logs/
+            lods/
+          if-no-files-found: warn
