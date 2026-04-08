@@ -113,10 +113,13 @@ def replace_managed_section(readme_text: str, section_text: str) -> str:
 def main() -> None:
     args = parse_args()
     frame = pd.read_parquet(args.input_path)
-    required = {"url", "title", "authors", "score", "abstract"}
+    required = {"url", "score", "abstract"}
     missing = required - set(frame.columns)
     if missing:
         raise SystemExit(f"Input parquet is missing required columns: {sorted(missing)}")
+    for optional in ["title", "authors"]:
+        if optional not in frame.columns:
+            frame[optional] = ""
 
     readme_path = Path(args.readme)
     readme_text = readme_path.read_text(encoding="utf-8")

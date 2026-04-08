@@ -3,8 +3,8 @@ set -euo pipefail
 
 cd "$(dirname "$0")"
 
-# Load local dotenv values for shell gating when present.
-if [[ -f .env ]]; then
+# Load local dotenv values for shell gating when present, unless explicitly disabled.
+if [[ "${SKIP_DOTENV:-}" != "1" && -f .env ]]; then
   set -a
   # shellcheck disable=SC1091
   source .env
