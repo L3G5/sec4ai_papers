@@ -7,6 +7,15 @@ Public daily runner for scoring fresh arXiv papers and optionally posting the re
 
 Archived by run date, newest first.
 
+### 2026-04-09
+
+Run date: `2026-04-09`.
+
+- [VLMShield: Efficient and Robust Defense of Vision-Language Models against Malicious Prompts](https://arxiv.org/abs/2604.06502v1) (52.8%)
+  Authors: Peigui Qi, Kunsheng Tang, Yanpu Yu, Jialin Wu, Yide Song, Wenbo Zhou, Zhicong Huang, Cheng Hong, Weiming Zhang, Nenghai Yu
+
+  Vision-Language Models (VLMs) face significant safety vulnerabilities from malicious prompt attacks due to weakened alignment during visual integration. Existing defenses suffer from efficiency and robustness. To address these challenges, we first propose the Multimodal Aggregated Feature Extraction (MAFE) framework that enables CLIP to handle long text and fuse multimodal information into unified representations. Through empirical analysis of MAFE-extracted features, we discover distinct distributional patterns between benign and malicious prompts. Building upon this finding, we develop VLMShield, a lightweight safety detector that efficiently identifies multimodal malicious attacks as a plug-and-play solution. Extensive experiments demonstrate superior performance across multiple dimensions, including robustness, efficiency, and utility. Through our work, we hope to pave the way for more secure multimodal AI deployment. Code is available at [this https URL](https://github.com/pgqihere/VLMShield).
+
 ### 2026-04-08
 
 Run date: `2026-04-08`.
