@@ -205,7 +205,7 @@ def fetch_metadata_for_ids(
     logger: logging.Logger,
 ) -> list[dict[str, str]]:
     rows: list[dict[str, str]] = []
-    time.sleep(2)
+    time.sleep(10)
     progress = tqdm(range(0, len(paper_ids), batch_size), desc="Fetching export API batches")
     for start in progress:
         batch_ids = paper_ids[start : start + batch_size]
