@@ -49,8 +49,9 @@ jobs:
             echo "No README changes to commit."
             exit 0
           fi
+          git pull --rebase origin main 
           git commit -m "Update README latest papers"
-          git push
+          git push origin main
 
       - name: Upload run artifacts
         if: always()
