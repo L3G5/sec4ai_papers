@@ -81,8 +81,6 @@ def parse_day(day_text: str) -> date:
     except ValueError as exc:
         raise SystemExit(f"Invalid --day value: {day_text}. Expected YYYY-MM-DD.") from exc
 
-import requests
-
 
 def fetch_url(url: str) -> str:
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
