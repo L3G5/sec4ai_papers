@@ -5,6 +5,7 @@ import logging
 import re
 import shutil
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
@@ -15,6 +16,7 @@ from pathlib import Path
 
 import joblib
 import pandas as pd
+from tenacity import Retrying, before_sleep_log, retry_if_exception, stop_after_attempt, wait_exponential
 from tqdm.auto import tqdm
 
 from arxiv_priority_predictor import ArxivPriorityPredictor
@@ -82,16 +84,32 @@ def parse_day(day_text: str) -> date:
         raise SystemExit(f"Invalid --day value: {day_text}. Expected YYYY-MM-DD.") from exc
 
 
-def fetch_url(url: str) -> str:
-    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
+def is_retryable_fetch_error(exc: BaseException) -> bool:
+    if isinstance(exc, urllib.error.HTTPError):
+        return exc.code in {408, 429, 500, 502, 503, 504}
+    return isinstance(exc, (TimeoutError, urllib.error.URLError))
+
+
+def fetch_url(url: str, logger: logging.Logger | None = None) -> str:
+    headers = {"User-Agent": "Mozilla/5.0 (compatible; sec4ai-papers/1.0; +https://github.com/L3G5/sec4ai_papers)"}
 
     request = urllib.request.Request(
         url,
         headers=headers,
     )
-    time.sleep(2)
-    with urllib.request.urlopen(request, timeout=60) as response:
-        return response.read().decode("utf-8")
+    retryer = Retrying(
+        retry=retry_if_exception(is_retryable_fetch_error),
+        wait=wait_exponential(multiplier=5, min=5, max=120),
+        stop=stop_after_attempt(5),
+        before_sleep=before_sleep_log(logger, logging.WARNING) if logger else None,
+        reraise=True,
+    )
+    for attempt in retryer:
+        with attempt:
+            time.sleep(2)
+            with urllib.request.urlopen(request, timeout=60) as response:
+                return response.read().decode("utf-8")
+    raise RuntimeError("unreachable: tenacity retry loop exited without returning or raising")
 
 
 def setup_logger(log_max_bytes: int, log_backup_count: int) -> tuple[logging.Logger, Path]:
@@ -127,7 +145,7 @@ def parse_recent_sections(html: str) -> list[tuple[date, int, list[str]]]:
 def recent_ids_for_category(category: str, logger: logging.Logger) -> list[tuple[date, int, list[str]]]:
     url = ARXIV_RECENT_URL_TEMPLATE.format(category=category)
     logger.info("Fetching recent page for %s: %s", category, url)
-    html = fetch_url(url)
+    html = fetch_url(url, logger)
     sections = parse_recent_sections(html)
     if not sections:
         raise SystemExit(f"Could not parse recent page for {category}")
@@ -211,7 +229,7 @@ def fetch_metadata_for_ids(
         url = ARXIV_EXPORT_API_URL + "?" + urllib.parse.urlencode(
             {"id_list": ",".join(batch_ids), "max_results": len(batch_ids)}
         )
-        xml_text = fetch_url(url)
+        xml_text = fetch_url(url, logger)
         root = ET.fromstring(xml_text)
         batch_rows = [parse_export_entry(entry) for entry in root.findall("atom:entry", ATOM_NS)]
         rows.extend(batch_rows)
