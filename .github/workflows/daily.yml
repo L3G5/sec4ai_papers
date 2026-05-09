@@ -20,13 +20,13 @@ jobs:
       UPDATE_README: ${{ github.event_name == 'schedule' && '1' || '0' }}
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v6
+        uses: astral-sh/setup-uv@v8.1.0
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.14"
 
@@ -49,13 +49,19 @@ jobs:
             echo "No README changes to commit."
             exit 0
           fi
-          git pull --rebase origin main 
           git commit -m "Update README latest papers"
-          git push origin main
+          for attempt in 1 2 3; do
+            if git pull --rebase origin main && git push origin main; then
+              exit 0
+            fi
+            echo "Push attempt ${attempt} failed; retrying after rebase..."
+            sleep 5
+          done
+          exit 1
 
       - name: Upload run artifacts
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: daily-arxiv-${{ github.run_number }}
           path: |
