@@ -7,6 +7,19 @@ Public daily runner for scoring fresh arXiv papers and optionally posting the re
 
 Archived by run date, newest first.
 
+### 2026-05-22
+
+Run date: `2026-05-22`.
+
+- [Adversarial Reframing: A Framework for Targeted Generation in Language Models](https://arxiv.org/abs/2605.21674v1) (60.0%)
+  Authors: Shahnewaz Karim Sakib, Swati Kar, Anindya Bijoy Das
+
+  Large Language Models (LLMs) are widely deployed in diverse real-world settings, yet remain vulnerable to jailbreaking, where prompt-based attacks bypass safety filters. We present THREAT (Targeted Harmful generation via Reframing and Exploitation of Adversarial Tactics), a reasoning-driven framework that coordinates multiple LLMs in an iterative search loop to find textual jailbreak prompts. We formulate prompt discovery as a nonconvex optimization problem and provide an efficient solution that lowers runtime and improves attack effectiveness. Across diverse datasets and model architectures, THREAT delivers higher attack success rates with lower computational cost than prior methods. The crafted prompts were flagged as harmful in fewer than 1% of cases, compared with about 50% refusals for the corresponding unmodified prompts. These findings reveal previously undetected vulnerabilities in aligned LLMs and position THREAT as a practical tool for proactively strengthening the safety of foundation models.
+- [Boundary-targeted Membership Inference Attacks on Safety Classifiers](https://arxiv.org/abs/2605.22373v1) (57.4%)
+  Authors: Anthony Hughes, Alexander Goldberg, Prince Jha, Adam Perer, Nikolaos Aletras, Niloofar Mireshghallah
+
+  Safety classifiers are essential safeguards within generative AI systems, filtering harmful content or identifying at-risk users when interacting with large language models. Despite their necessity, these models are trained on sensitive datasets including discussions of self-harm and mental health, raising important, yet poorly understood, privacy concerns. Membership inference attacks (MIAs) allow adversaries to infer membership of examples used to train models. In this work, we hypothesize that identifying the examples on which the classifier is least confident are informative for an adversary to infer membership. This reflects a localized failure of generalization, where the model relies on memorization to resolve ambiguity in the training set. To investigate this, we introduce a new boundary-targeted selection strategy that identifies low confidence examples that amplify the signal of an examples membership within a training set. Our experimental results show that an adversary can recover 19\% of the conversations a safety classifier flagged as indicating user distress, at a 5\% false-positive rate, on a classifier fine-tuned for detecting a user who may require emotional support. This is $3.5$ times more than attacking using state-of-the-art MIA methods alone. Finally, we characterize the boundary laying examples and show that content-based filtering is ineffective for protection, and existing noise strategies can effectively mitigate susceptibility of these examples.
+
 ### 2026-05-21
 
 Run date: `2026-05-21`.
