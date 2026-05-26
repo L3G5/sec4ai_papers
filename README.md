@@ -7,6 +7,19 @@ Public daily runner for scoring fresh arXiv papers and optionally posting the re
 
 Archived by run date, newest first.
 
+### 2026-05-26
+
+Run date: `2026-05-26`.
+
+- [Algorithms with Polynomially-Improved Approximation Factors for the $2 \rightarrow q$ Norm, and Applications](https://arxiv.org/abs/2605.25303v1) (69.2%)
+  Authors: Samuel B. Hopkins, Stefan Tiegel
+
+  The $2 \rightarrow q$ norm of a matrix $X \in \mathbb{R}^{n \times d}$ is defined as $\lVert X \rVert_{2 \rightarrow q} = \sup_{\lVert v \rVert_2 = 1} \lVert Xv \rVert_q$. We give polynomial-time multiplicative approximation algorithms for this norm when $q > 2$ (i.e. in the hypercontractive setting). This problem either directly captures or is closely related to long-standing open problems in combinatorial optimization and hardness of approximation (e.g. Small Set Expansion), quantum information (e.g. Best Separable State), and algorithmic statistics. Very little is known about what approximation factors we can achieve for this problem in polynomial time, even though such approximations have significant downstream consequences. Barak, Brandão, Harrow, Kelner, Steurer, and Zhou showed that no polynomial-time algorithm can achieve an approximation factor better than $2^{\sqrt{\log n}}$, assuming the Exponential Time Hypothesis (FOCS'12). On the other hand, a simple spectral algorithm gives a $d^{1/4}$-approximation as a baseline. We give, to the best of our knowledge, the first polynomial-time approximation algorithm beating this baseline by polynomial factors. For the important special case of $q = 4$ it achieves a $d^{1/8}$-approximation. All previous algorithms required additional assumptions on $X$, or only surpassed the baseline for small values of $n$. Moreover, we construct sum-of-squares certificates for the $2 \rightarrow q$ norm. This directly implies improved algorithms for robust mean and covariance estimation, robust regression, and clustering, when the data only satisfies a bound on its $q$-th moment.
+- [Deep-Research Agents Can Be Poisoned via User-Generated Content](https://arxiv.org/abs/2605.24245v1) (52.6%)
+  Authors: Tingwei Zhang, Harold Triedman, Vitaly Shmatikov
+
+  Deep-research agents, i.e., systems that rely on multi-agent pipelines to iteratively retrieve, synthesize, and cite Web content in order to produce structured reports, are rapidly replacing traditional search for both routine and complex information needs. These agents issue many related queries during a single research session. We show that for many common search topics, they repeatedly retrieve the same user-generated content (UGC) pages from platforms such as Reddit and Wikipedia. Next, we argue that this retrieval overlap creates a concentrated attack surface: an adversary who appends a short, crafted text to a single, frequently retrieved UGC page can cause the agent to cite attacker-chosen content and promote attacker-chosen entities across many related queries. We evaluate this attack on three representative deep-research systems (STORM, Co-STORM, and OmniThink) across multiple query clusters. We also study defenses at different stages of the pipeline, including source-level filtering and output-based detection. Our findings highlight a fundamental vulnerability in how deep-research agents retrieve and integrate web content.
+
 ### 2026-05-25
 
 Run date: `2026-05-25`.
