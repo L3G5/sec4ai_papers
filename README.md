@@ -7,6 +7,15 @@ Public daily runner for scoring fresh arXiv papers and optionally posting the re
 
 Archived by run date, newest first.
 
+### 2026-05-28
+
+Run date: `2026-05-28`.
+
+- [PAST2HARM: A Simple Adaptive Past Tense Attack for Jailbreaking Multimodal AI](https://arxiv.org/abs/2605.27545v1) (63.4%)
+  Authors: Snehasis Mukhopadhyay
+
+  Jailbreak attacks on multimodal AI systems remain underexplored, even though unsafe image generation can have more severe consequences than unsafe text and current defenses are relatively immature. We introduce PAST2HARM, a simple yet effective adaptive jailbreak framework that bypasses refusal training in state of the art multimodal text to image models. Building on prior findings that past tense reformulations can evade safeguards, PAST2HARM systematically exploits this vulnerability in multimodal generative AI. We characterize the attack along two dimensions. First, breadth: through temporal deepening, the framework incrementally strengthens historical anchoring and archival cues, eroding refusal boundaries across models with varying alignment strength. Second, depth: via iterative escalation after initial compliance, we probe the upper bound of harmful generation, measuring severity using a scalar severity jailbreak metric evaluated by a language model acting as a judge. We find that mid conversation turns form peak vulnerability windows, where harmfulness increases before plateauing and eventually undergoing semantic inversion. We evaluate PAST2HARM on three models Gemini Nano Banana Pro, GPT Image 2, and SD XL achieving attack success rates of 83 percent, 67 percent, and 100 percent in a black box, gradient free setting. Adversarial prompts also transfer across models, with cross model success rates above 50 percent. The attack elicits diverse harmful outputs, including explicit sexual content, political disinformation, historical denial narratives, hate speech, and self harm glorification. We further release a curated benchmark of prompts, reformulations, and outputs as a resource for red teaming and alignment. Our results expose fundamental brittleness in current safeguards and highlight the need for stronger multimodal safety training.
+
 ### 2026-05-26
 
 Run date: `2026-05-26`.
