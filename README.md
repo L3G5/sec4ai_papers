@@ -7,6 +7,15 @@ Public daily runner for scoring fresh arXiv papers and optionally posting the re
 
 Archived by run date, newest first.
 
+### 2026-06-23
+
+Run date: `2026-06-23`.
+
+- [Think Twice Before You Act: Protecting LLM Agents Against Tool Description Poisoning via Isolated Planning](https://arxiv.org/abs/2606.20922v1) (72.0%)
+  Authors: Shanghao Shi, Xiao Wang, Chaoyu Zhang, Hao Li, Wenjing Lou, Thomas Hou, Yevgeniy Vorobeychik, Chongjie Zhang, Ning Zhang
+
+  The integration of external tools has substantially expanded the capabilities of large language model (LLM) agents, but it also introduces new attack surfaces beyond prompt injection. In particular, cross-tool description poisoning can manipulate planner-visible tool metadata to steer an agent's trajectory, even if the poisoned tool itself is never chosen. To understand the effectiveness of existing defenses against this emerging threat, we first evaluate several prompt-injection defenses and find that they transfer poorly to cross-tool description poisoning. A key observation is that poisoned descriptions persist in the planning context across steps, enabling continuous influence over subsequent tool choices. Building on this insight, we propose Tool-Guard, a novel system-level defense based on a new concept called isolated planning, in which tool invocations that are detected as misaligned or suspicious cause the corresponding tool to be placed in a quarantined list (the influenced list), breaking further influence from poisoned descriptions. With this influence isolated, the tool can continue to be used to support the task, enabling a robust defense that preserves legitimate tool utility. Experiments on the AgentDojo and ASB benchmarks show that Tool-Guard substantially reduces attack success while maintaining high task utility. Our code is available at https://github.com/shishishi123/Tool-Guard.
+
 ### 2026-06-22
 
 Run date: `2026-06-22`.
