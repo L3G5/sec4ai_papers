@@ -7,6 +7,15 @@ Public daily runner for scoring fresh arXiv papers and optionally posting the re
 
 Archived by run date, newest first.
 
+### 2026-06-30
+
+Run date: `2026-06-30`.
+
+- [CAREBench: A Child-Safety Risk Benchmark for Language Models](https://arxiv.org/abs/2606.29685v1) (54.6%)
+  Authors: Kaavya Krishna-Kumar, Elaine Lau, Vaughn Robinson, Jay Caldwell, Sheriff Issaka, Skyler Wang, Francisco Guzmán, Steven Kelling, Jonas Mueller
+
+  How can we evaluate whether frontier AI systems recognize child-safety risks before they escalate into explicit harm? Existing child safety evaluations focus on child sexual abuse material, yet many child-safety failures begin earlier: in model assistance that helps adults manipulate, impersonate, profile, or isolate minors, and in model responses that deepen children's emotional dependence on AI systems rather than redirecting them toward human support. We introduce CAREBench (Child AI Risk Evaluation), a benchmark to assess such upstream child-safety risks in language models. CAREBench contains 500 prompts spanning twelve risk categories, including grooming and relationship engineering, deception and impersonation, surveillance and privacy, sextortion and sexual abuse, AI anthropomorphization, emotional dependency, and mental illness sensitivity. Developed with response annotations from parents and clinicians, the benchmark excludes explicit abuse material and imagery; instead, it evaluates whether models recognize, refuse, de-escalate, or redirect risky interactions before harm becomes overt. Evaluating seven frontier models on our benchmark, we find failure rates ranging from 2% to 58%, with failure patterns that vary across risk categories. CAREBench provides a responsibly scoped evaluation for LLM developers to identify and close gaps in child safety policies.
+
 ### 2026-06-29
 
 Run date: `2026-06-29`.
