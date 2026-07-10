@@ -7,6 +7,19 @@ Public daily runner for scoring fresh arXiv papers and optionally posting the re
 
 Archived by run date, newest first.
 
+### 2026-07-10
+
+Run date: `2026-07-10`.
+
+- [Overthinking: Amplifying Reasoning Weights to Extract Learned Secrets](https://arxiv.org/abs/2607.08173v1) (74.4%)
+  Authors: Jack Hopkins, Dipika Khullar, Fabien Roger
+
+  Black box auditing of language models is an essential pre-deployment tool, but it may miss subtle forms of misalignment and hidden information. To better elicit hidden information during an auditing process, we introduce \emph{overthinking}: the process of using reasoning task vectors to amplify the propensity to think out loud of reasoning models. Given the parameters of a non-reasoning instruct model $M$ and reasoning-distilled model $R$, we define the \emph{overthinking model} as $\boldsymbolθ_{\mathcal{O}_α} = \boldsymbolθ_{\mathcal{M}} + α(\boldsymbolθ_{\mathcal{R}} - \boldsymbolθ_{\mathcal{M}})$, where $α> 1$ amplifies reasoning beyond the pure reasoning model $R$. Additionally, we introduce new layer-wise attenuation strategies that selectively amplify reasoning without losing quality and coherence of model outputs. We demonstrate that overthinking models are more likely to reveal hidden information across four experimental settings, across 2B-32B models. Our findings suggest that reasoning amplification may surface secrets or unintended behaviors acquired during training up to $10\times$ more frequently than the original reasoning model. How secrets surface depends on the secret type: some require perturbation along the reasoning direction, while others yield to any sufficiently large weight perturbation.
+- [Open Models, Open Risks: Measuring Unsafe Generation in Text-to-Image Models In the Wild](https://arxiv.org/abs/2607.07827v1) (54.8%)
+  Authors: Peilin Han, Yang Liu, Yilong Yang, Jingchun Zhang, Teng Li, Jianfeng Ma, Zhuo Ma
+
+  Existing safety studies on text-to-image (T2I) jailbreaks are largely conducted in controlled in-the-lab settings, typically on a small number of canonical models. As a result, the current safety status of the rapidly growing in-the-wild T2I ecosystem remains unclear. This uncertainty is amplified by two factors: existing detector-based metrics are designed for controlled evaluation, and in-the-wild risks may arise not only from adversarial prompting, but also from unsafe release practices and unsafe model derivatives. In this paper, we present a large-scale empirical study of in-the-wild T2I safety through the lens of jailbreak. We first show that detector-only jailbreak metrics substantially overestimate practical risk over in the wild due to semantic drift and generation artifacts, and we introduce Advanced ASR to better capture semantically valid and visually plausible unsafe generation. Using this refined metric, we evaluate 200+ in-the-wild T2I models from Hugging Face under three representative jailbreak attacks. Our results show that many downstream models retain a non-trivial degree of safety even without explicit post-hoc safeguards, indicating that safety degradation in the wild is neither universal nor uniform. At the same time, we identify a set of high-risk models, including explicitly NSFW-oriented releases as well as seemingly benign models whose unsafe behavior is only exposed through systematic evaluation. We further trace these models to their release context and report high-risk cases to Hugging Face.
+
 ### 2026-07-09
 
 Run date: `2026-07-09`.
