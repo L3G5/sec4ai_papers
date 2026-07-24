@@ -7,6 +7,15 @@ Public daily runner for scoring fresh arXiv papers and optionally posting the re
 
 Archived by run date, newest first.
 
+### 2026-07-24
+
+Run date: `2026-07-24`.
+
+- [Buzz to Boom: Detecting Message Progression Vulnerabilities in Electron Applications via Segmented Directed Fuzzing](https://arxiv.org/abs/2607.20698v1) (55.4%)
+  Authors: Jianjia Yu, Zhengyu Liu, Ziyang Li, Yu Sun, Yinzhi Cao
+
+  Electron is a popular framework for building cross-platform desktop applications using web technologies. Such applications consist of multiple processes with different privilege levels that communicate via message passing. When inter-process messages carry attacker-controlled inputs, they can propagate across processes and reach privileged APIs, e.g., command execution. Such a message propagation behavior is characterized as Message Progression Vulnerabilities (MPVs). The exploitation of MPVs is challenging because it often requires multiple steps, e.g., first arbitrary code execution in one process via message passing, and then command injection in another process using another message crafted in the first process. To our knowledge, existing works on Electron security only study unsafe configurations and malicious Document Object Model (DOM) content, i.e., they cannot detect or exploit these vulnerabilities that need to be triggered by complex cross-process exploits via message passing. We present Proton, a segmented directed fuzzing framework for detecting MPVs. Our key insight is to decompose end-to-end fuzzing into per-process segments along message-passing boundaries, where the goals of fuzzing each segment are either: (i) reaching a sink in the current process or (ii) propagating the payload to the next process, to enable the exploration of another process. In the second case, the messages seed the corpus of the next segment. Finally, Proton synthesizes crash inputs from each process to validate end-to-end exploits. We evaluate Proton against 589 real-world Electron applications, resulting in 23 zero-day MPVs. Among them, 22 lead to OS command execution, including projects with over 50k GitHub stars. We responsibly disclosed all findings. To date, we have received 13 acknowledgments, 11 fixes, and 11 CVEs, including a bug bounty from Vercel.
+
 ### 2026-07-23
 
 Run date: `2026-07-23`.
