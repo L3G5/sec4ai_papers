@@ -7,6 +7,15 @@ Public daily runner for scoring fresh arXiv papers and optionally posting the re
 
 Archived by run date, newest first.
 
+### 2026-07-29
+
+Run date: `2026-07-29`.
+
+- [TYPO: Instruction-Dense Visual Jailbreaks against Commercial Closed-Source Image-Generation Models](https://arxiv.org/abs/2607.24897v1) (51.2%)
+  Authors: Meng Xie, Li Zeng, Hangtao Zhang, Xianlong Wang, Ziqi Zhou, Pengpeng Qiao, Zhetao Li
+
+  Recent commercial image-generation models can generate high-quality images with readable text (e.g., posters, infographics, and manuals), attracting considerable attention. Yet we first show that this same capability also introduces a previously unreported safety vulnerability: these systems may refuse to generate harmful text directly, yet permit the same content when rendered as text within generated images, i.e., safety alignment does not reliably transfer from textual outputs to text embedded in images. In this paper, unlike existing visual jailbreaks against image-generation models, which primarily induce models to generate harmful visual objects or scenes, we introduce the concept of instruction-dense visual jailbreaks, in which image-generation models produce detailed, readable, and actionable harmful instructions within images. Such outputs can amplify harm because the rendered instructions can be readily read and widely spread. To instantiate this threat, we propose TYPO, a black-box framework that exploits this safety gap by automatically generating adversarial TYPOgraphy prompts, which covertly steer image-generation models to express harmful intent as highly legible, typographically structured text. Specifically, TYPO decomposes prompt generation into two channels: a textual channel for reframing the target intent, and a visual channel for specifying its presentation form. We formulate these two channels as a dual-channel textual-visual strategy space and optimize candidate strategy combinations through an adaptive combinatorial search. Extensive experiments across four commercial models (i.e., GPT-Image-2, Nano Banana Pro, Qwen-Image-2, and Seedream 5.0 Lite) show that TYPO substantially outperforms nine representative jailbreak attacks by 50.2% in ASR on average, while incurring an average query cost of only $0.04.
+
 ### 2026-07-28
 
 Run date: `2026-07-28`.
