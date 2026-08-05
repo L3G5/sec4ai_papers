@@ -7,6 +7,12 @@ Public daily runner for scoring fresh arXiv papers and optionally posting the re
 
 Archived by run date, newest first.
 
+### 2026-08-05
+
+Run date: `2026-08-05`.
+
+No papers reached `50%` in this run.
+
 ### 2026-08-04
 
 Run date: `2026-08-04`.
