@@ -7,6 +7,19 @@ Public daily runner for scoring fresh arXiv papers and optionally posting the re
 
 Archived by run date, newest first.
 
+### 2026-08-18
+
+Run date: `2026-08-18`.
+
+- [Beyond Direct Access: Resource Hijacking in LLM Agents](https://arxiv.org/abs/2608.15108v1) (68.3%)
+  Authors: Puyu Zeng, Qibing Ren
+
+  Large language model agents are increasingly connected to high-value resources such as computing infrastructure, credentials, usage budgets, identities, private knowledge, communication channels, and organizational workflows. Existing agent security research mainly studies attacks on instructions, data, and tool behaviors, while high-value resources accessible to agents have received much less attention as direct attack targets. We are the first to identify and systematically study agent resource hijacking, a security blind spot in which attackers induce agents to invoke, consume, transfer, or control high-value resources for their own goals without directly obtaining those resources or their credentials. To study this threat, we introduce ResourceHijackBench together with an automated pipeline for generating resource hijacking cases. We organize high-value agent resources into six categories and construct 300 attack scenarios with 900 attack prompts. Each case runs in an isolated local environment that records actual resource use, allowing attacks to be evaluated from agent behavior rather than text responses alone. Without additional defenses, OpenClaw reaches an average attack success rate of 84.06%. The attack remains effective across different model backends, with average success rates ranging from 69.98% to 89.58%. Existing defenses reduce part of the risk, but the strongest evaluated defense still leaves an average attack success rate of 55.11%. These results show that high-value resources accessible to agents form an important and previously overlooked attack surface, and that current agent defenses are not sufficient to protect them from resource hijacking.
+- [A Pilot Study of Autocompleting Tokenizers](https://arxiv.org/abs/2608.15080v1) (65.7%)
+  Authors: Samuel Wexler, Mark Hopkins
+
+  Modern input methods routinely rely on autocomplete to omit information that can be recovered from local context. Inspired by these autocomplete-assisted writing systems, we investigate whether Transformer inputs can be compressed in a similar manner. Byte-level tokenization offers a simple and language-independent alternative to subword tokenization, but its longer input sequences typically result in increased computational cost and reduced model quality. We propose a compression scheme that employs a lightweight autoregressive byte language model to identify and remove bytes that are easily predictable from their surrounding context before Transformer processing. The resulting compressed representation is then provided as input to a standard encoder--decoder Transformer. Experiments on machine translation show that a substantial fraction of source-language bytes can be omitted without degrading translation quality. On English--French, our best method preserves translation performance while reducing source sequence length by nearly one-third. Additional experiments on Finnish--English, Russian--English, and Chinese--English demonstrate that the approach generalizes across diverse writing systems and morphological typologies, yielding comparable or improved translation quality at compression ratios between 0.47 and 0.67. These findings suggest that many input bytes are predictable enough to be represented implicitly rather than explicitly, providing a simple mechanism for reducing the sequence-length overhead associated with byte-level models.
+
 ### 2026-08-17
 
 Run date: `2026-08-17`.
