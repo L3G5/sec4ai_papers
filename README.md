@@ -7,6 +7,19 @@ Public daily runner for scoring fresh arXiv papers and optionally posting the re
 
 Archived by run date, newest first.
 
+### 2026-08-25
+
+Run date: `2026-08-25`.
+
+- [Redteaming Leading Arabic LLMs with ASAS](https://arxiv.org/abs/2608.21985v1) (62.0%)
+  Authors: Fidaa Abed, Haidar Khan, M Saiful Bari, Babar Khan, Abdalghani Abujabal
+
+  As the adoption of large language models (LLMs) grows in Arabic-speaking regions, ensuring their safety and cultural alignment is increasingly critical. However, Arabic LLM safety remains underexplored, especially in adversarial evaluation settings. We introduce the Arabic Safety Index (ASAS), the first fully human-curated Arabic benchmark for redteaming LLMs. ASAS contains 801 prompts spanning 8 safety categories and 8 attack strategies, with ideal responses in Modern Standard Arabic (MSA). We conduct a redteaming evaluation across seven leading models with Arabic capabilities, including GPT-4o, Claude 3.7 Sonnet, and regional models such as ALLaM and FANAR. Human annotators rate responses using a structured 4-point safety scale, revealing that most models fail to defend against 50% of unsafe prompts. Our findings highlight major safety gaps in high-harm categories such as weapons and illicit substances, with direct and obfuscation-based attacks proving most effective. The results also show that language alignment does not readily transfer across languages, and that automated safety judges (e.g., GPT-4o) perform poorly compared to human annotators. ASAS provides a culturally grounded benchmark and redteaming protocol to drive progress in Arabic LLM safety.
+- [CodeMechanic: Bug-Property-Guided Program Mitigation](https://arxiv.org/abs/2608.22275v1) (55.6%)
+  Authors: Han Zheng, Rafaila Galanopoulou, Ilia Shumailov, Tianqi Fan, Aiden Hall, Dominik Maier, Mathias Payer
+
+  Automated testing discovers vulnerabilities faster than developers can investigate and repair them, leaving an interval in which known memory corruptions remain exploitable. End- to-end LLM repair agents can shorten this interval, but they synthesize open-ended code changes and commonly validate them only by replaying a proof of concept (PoC). This weak oracle accepts patches that silence the observed crash by changing unrelated behavior, making unintended deployment risky. We present CodeMechanic, a bug-property-guided system for generating constrained mit- igations for spatial memory corruption. Instead of asking an LLM to generate a permanent repair, CodeMechanic reconstructs the violated memory-safety property from the crash, validates the dereferenced pointer and its buffer range, and inserts a local fail-stop guard before the dangerous access. The guard terminates execution when the boundary check fails. The resulting mitigation deliberately trades availability for security: it can convert potential remote code execution into controlled termination while developers investigate the root cause and prepare a permanent repair. CodeMechanic combines a two-dimensional static and dynamic context extractor with in-prompt debugging knowledge and stepwise val- idation to limit the effect of LLM errors. On 101 real-world ARVO bugs, the first attempt of CodeMechanic produces 47.6% more plausible patches (i.e., patches that pass PoC- replay validation) than the best baseline while using 91% fewer tokens. Manual audit further shows that CodeMechanic produces 3.4x - 4.3x more patches semantically equivalent to developer-written repairs.
+
 ### 2026-08-24
 
 Run date: `2026-08-24`.
