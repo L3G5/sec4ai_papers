@@ -7,6 +7,15 @@ Public daily runner for scoring fresh arXiv papers and optionally posting the re
 
 Archived by run date, newest first.
 
+### 2026-10-19
+
+Run date: `2026-10-19`.
+
+- [RedDarwin: Evolving Jailbreak Skills against Frontier LLMs](https://arxiv.org/abs/2610.23726v1) (66.6%)
+  Authors: Zhouyuan Ma, Yutao Wu, Hanxun Huang, Xiang Zheng, Yi Liu, Xingjun Ma
+
+  Red teaming must continually adapt as frontier LLM safeguards evolve, yet existing approaches largely search for adversarial prompts or optimize within fixed attack procedures. We observe that even when an attack becomes ineffective, its underlying mechanisms can remain useful and can be revised or recombined to construct stronger attacks. Based on this insight, we introduce RedDarwin, an agentic framework that shifts the unit of jailbreak evolution from prompts and fixed attacks to executable attack skills. RedDarwin consists of 47 reusable base skills and autonomously revises, composes, executes, and selects them using target-model feedback, allowing successful discoveries to become building blocks for subsequent evolution. RedDarwin produces 65 evolved skills, improving 44 of 47 base attacks and increasing their mean attack success rate (ASR) on AdvBench from 18.8% to 47.3%. These evolved skills consistently outperform baselines on the held-out StrongREJECT and frontier LLMs unseen during evolution; with only 10 target-model queries, RedDarwin achieves 100% ASR on GPT-5.6-Sol, 92% on Claude-Sonnet-5, and 80% on Gemini-3.8-Flash. Analysis of the evolution trajectories further shows that strong attacks often emerge from novel combinations of reusable mechanisms rather than from individually dominant ones. We believe this paradigm can accelerate adaptive red teaming and inform stronger safeguards, creating complementary value for both safety evaluation and defense.
+
 ### 2026-10-16
 
 Run date: `2026-10-16`.
