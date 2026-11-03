@@ -7,6 +7,15 @@ Public daily runner for scoring fresh arXiv papers and optionally posting the re
 
 Archived by run date, newest first.
 
+### 2026-11-03
+
+Run date: `2026-11-03`.
+
+- [On the Framing Effect of AI Red-Teaming Instructions: Evidence from Prior Exercises and Controlled Simulations](https://arxiv.org/abs/2611.00412v1) (56.5%)
+  Authors: Michael Feffer, Alice Qian, Anusha Sinha, Muye Zhang, Shalini Ghosh, Rachel Phinnemore, Bart Stawicki, Hong Shen, Hoda Heidari
+
+  AI red-teaming, adversarially probing generative AI systems to surface harms, has become a central evaluation method. However, prior work has highlighted that red-teaming is a fairly open-ended task, laden with myriad design choices that can shape its findings. In this work, we focus on the instructions used to conduct red-teaming exercises and hypothesize that they can significantly affect outcomes in a manner analogous to the framing effect in psychology, where the format in which information is presented greatly impacts how people respond. To understand whether and why instructions impact red-teaming outcomes, first, we analyze the range of ways in which instructions have historically been formulated, reviewing 228 instances of prior work. Second, based on takeaways from this review, we run controlled simulations that hold parameters such as the risk domain, the attacker, and the model under investigation fixed while varying only the instructions. From five real instruction templates used by industry and academic organizations, we derive 45 instruction frames across three risk domains and three levels of risk granularity, generating 100 variants per frame, and deploy each against five open-weights target models, for 22,500 attacks. Using a generalized linear mixed model, we find that certain instruction properties significantly predict attack success rates: the lowest and highest levels of risk granularity both outperform intermediate specificity, as do short and long instructions relative to medium-length ones. The presence of examples is associated with higher attack success rates, while supplying explicit harm definitions yields lower ones. As alignment evaluations become increasingly automated, our results suggest that humans continue to shape red-teaming outcomes substantially through the instructions they provide to scaffold the activity.
+
 ### 2026-11-02
 
 Run date: `2026-11-02`.
