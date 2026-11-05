@@ -7,6 +7,15 @@ Public daily runner for scoring fresh arXiv papers and optionally posting the re
 
 Archived by run date, newest first.
 
+### 2026-11-05
+
+Run date: `2026-11-05`.
+
+- [Securing Web Agents with the Compile-Then-Execute Paradigm](https://arxiv.org/abs/2611.06039v1) (59.6%)
+  Authors: Annabella Chow, Jinhao Zhu, Sylvie Venuto, Abdulaziz Alharbi, Basel Alomair, Raluca Popa, David Wagner, Julien Piet
+
+  Web agents commonly follow the ReAct paradigm, selecting each action from runtime observations that inherently mix trusted and untrusted content. This design makes their control flow vulnerable to prompt injections embedded in webpages. We introduce Baya, a compile-then-execute web agent designed to prevent prompt-injection-driven control-flow hijacking by design. Before accessing the live website, Baya compiles the user's request into an executable Python program that calls a Trusted Website API. The planning model does not observe live website content; only the compiled program processes it. Untrusted data may determine program values or select among branches defined during compilation, but it cannot redefine the user task or cause the model to synthesize new website operations at runtime. The Trusted Website API gives the compiler a unified view of the website's action space, enabling ahead-of-time planning without the stepwise action discovery required by reactive agents. Our evaluation across 581 valid WebArena Verified tasks shows that Baya achieves 77.8% aggregate utility, outperforming browser-only ReAct (55.1%) and API-enabled ReAct (66.7%). On WASP, a security benchmark for web agents, Baya achieves 0% attack success rate, compared with 16.2% for API-enabled ReAct and 25.5% for browser-only ReAct.
+
 ### 2026-11-04
 
 Run date: `2026-11-04`.
